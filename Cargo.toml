@@ -3,7 +3,8 @@
 members = [
     "ch_01_hello",
     "ch_02_guessing_game",
-    "ch_03_control_flow"
+    "ch_03_control_flow",
+    "ch_04_ownership",
 ]
 
 resolver = "2"
