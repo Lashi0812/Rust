@@ -2,6 +2,7 @@
 
 members = [
     "hello",
+    "guessing_game"
 ]
 
 resolver = "2"
