@@ -1,0 +1,29 @@
+{
+    "name": "Rust",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "eamodio.gitlens",
+                "streetsidesoftware.code-spell-checker",
+                "ms-python.python",
+                "tamasfe.even-better-toml",
+                "ms-toolsai.jupyter",
+                "rust-lang.rust-analyzer"
+            ]
+        }
+    },
+    "features": {
+        "./zsh-plugins": {
+            "plugins": "zsh-syntax-highlighting zsh-autosuggestions",
+            "omzPlugins": "https://github.com/zsh-users/zsh-syntax-highlighting https://github.com/zsh-users/zsh-autosuggestions"
+        }
+    },
+    "mounts": [
+        "source=/mnt/drive/data,target=/mnt/data,type=bind,consistency=cached",
+        "source=projectname-bashhistory,target=/commandhistory,type=volume"
+    ]
+}
