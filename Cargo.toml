@@ -5,7 +5,8 @@ members = [
     "ch_02_guessing_game",
     "ch_03_control_flow",
     "ch_04_ownership",
-    "ch_04a_ownership_errors"
+    "ch_04a_ownership_errors",
+    "ch_04b_slice_type"
 ]
 
 resolver = "2"
