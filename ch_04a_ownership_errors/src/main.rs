@@ -169,8 +169,33 @@ fn error_due_alias_and_mutate() {
     fix_think_do_we_need_ref();
 }
 
+fn safe_program() {
+    let mut name = (String::from("first"), String::from("second"));
+    let first = &name.0; //? name.0 and name don't have write permission
+    name.1.push_str("changed"); //? name.1 still have write permission
+                                // println!("first = {}, name.0 = {} , name.1={}", first, name.0, name.1);
+}
+
+fn get_first(name: &(String, String)) -> &String {
+    &name.0
+}
+
+fn safe_program_return_error() {
+    let mut name = (String::from("first"), String::from("second"));
+    let first = get_first(&name); //? name.0 and name don't have write permission
+    name.1.push_str("changed"); //? name.1 still have write permission
+                                // println!("first = {}, name.0 = {} , name.1={}", first, name.0, name.1);
+}
+
+fn error_safe_program_when_mutating_different_field_tuple() {
+    println!("\n4. Safe program turn has Compiler Error due to Compiler not enough smart");
+    safe_program();
+    safe_program_return_error();
+}
+
 fn main() {
     error_due_return_reference_to_stack();
     error_due_not_enough_permission();
     error_due_alias_and_mutate();
+    error_safe_program_when_mutating_different_field_tuple();
 }
