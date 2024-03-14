@@ -113,7 +113,64 @@ fn error_due_not_enough_permission() {
     fix_clone_data();
 }
 
+fn error_trying_to_mutate_while_reference_is_alive() {
+    println!("\n3. Error due to mutate the data while reference is alive");
+    // let mut str_vec = vec![String::from("hello"), String::from("world!")]; //? Permission R,W,O
+    // let src = [String::from("great"), String::from("greatest")];
+    // let largest = str_vec.iter().max_by_key(|s| s.len()).unwrap(); //? Since we are creating alias here, we loss the permission of W in str_vec
+    // for s in src {
+    //     if s.len() > largest.len() {
+    //         str_vec.push(s.clone()); //? since push need W permission , but why lost the W permission  reason reference still alive, if we some shorten lifetime of reference then we can push it.
+    //     }
+    // }
+}
+
+fn fix_using_clone() {
+    println!("\t1. Create clone");
+    let mut str_vec = vec![String::from("hello"), String::from("World")];
+    let src = [String::from("great"), String::from("greatest")];
+    let largest = str_vec.iter().max_by_key(|s| s.len()).unwrap().clone(); //? Instead Holding reference we cloned it
+    for s in src {
+        if s.len() > largest.len() {
+            str_vec.push(s.clone());
+        }
+    }
+}
+
+fn fix_shorten_reference_lifetime_by_doing_all_operation_upfront_that_need_ref() {
+    println!("\t2. Shorten Ref Lifetime by doing operation upfront that need the reference");
+    let mut str_vec = vec![String::from("hello"), String::from("World")];
+    let src = [String::from("great"), String::from("greatest")];
+    let largest = str_vec.iter().max_by_key(|s| s.len()).unwrap();
+    let to_add: Vec<String> = src
+        .iter()
+        .filter(|s| s.len() > largest.len()) //? we do operation that need the reference upfront
+        .cloned()
+        .collect();
+    str_vec.extend(to_add); //? now we can modify the str_vec , since reference lifetime in shorten and we again the write permission
+}
+
+fn fix_think_do_we_need_ref() {
+    println!("\t3. Think do we need reference");
+    let mut str_vec = vec![String::from("hello"), String::from("World")];
+    let src = [String::from("great"), String::from("greatest")];
+    let largest = str_vec.iter().max_by_key(|s| s.len()).unwrap().len(); //? now we have length , since we don't need the string reference
+    for s in src {
+        if s.len() > largest {
+            str_vec.push(s.clone());
+        }
+    }
+}
+
+fn error_due_alias_and_mutate() {
+    error_trying_to_mutate_while_reference_is_alive();
+    fix_using_clone();
+    fix_shorten_reference_lifetime_by_doing_all_operation_upfront_that_need_ref();
+    fix_think_do_we_need_ref();
+}
+
 fn main() {
     error_due_return_reference_to_stack();
     error_due_not_enough_permission();
+    error_due_alias_and_mutate();
 }
