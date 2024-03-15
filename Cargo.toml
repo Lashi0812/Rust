@@ -9,7 +9,9 @@ members = [
     "ch_04b_slice_type",
     "ch_05_struct",
     "ch_06_enum",
-    "ch_06_enum_matching_pattern"
+    "ch_06_enum_matching_pattern",
+    "ch_07_packages",
+    "ch_07a_restaurant"
 ]
 
 resolver = "2"
