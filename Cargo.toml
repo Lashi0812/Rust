@@ -8,7 +8,8 @@ members = [
     "ch_04a_ownership_errors",
     "ch_04b_slice_type",
     "ch_05_struct",
-    "ch_06_enum"
+    "ch_06_enum",
+    "ch_06_enum_matching_pattern"
 ]
 
 resolver = "2"

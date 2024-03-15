@@ -44,6 +44,13 @@ name = "ch_06_enum"
 version = "0.1.0"
 
 [[package]]
+name = "ch_06_enum_matching_pattern"
+version = "0.1.0"
+dependencies = [
+ "rand",
+]
+
+[[package]]
 name = "getrandom"
 version = "0.2.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
