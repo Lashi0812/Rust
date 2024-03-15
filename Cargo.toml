@@ -6,7 +6,8 @@ members = [
     "ch_03_control_flow",
     "ch_04_ownership",
     "ch_04a_ownership_errors",
-    "ch_04b_slice_type"
+    "ch_04b_slice_type",
+    "ch_05_struct",
 ]
 
 resolver = "2"
