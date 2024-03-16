@@ -13,6 +13,7 @@ members = [
     "ch_07_packages",
     "ch_07a_restaurant",
     "ch_09_error_handling",
+    "ch_10_generics"
 ]
 
 resolver = "2"
