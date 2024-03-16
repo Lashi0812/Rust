@@ -11,7 +11,8 @@ members = [
     "ch_06_enum",
     "ch_06_enum_matching_pattern",
     "ch_07_packages",
-    "ch_07a_restaurant"
+    "ch_07a_restaurant",
+    "ch_09_error_handling",
 ]
 
 resolver = "2"
