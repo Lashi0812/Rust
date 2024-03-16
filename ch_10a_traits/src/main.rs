@@ -1,4 +1,4 @@
-use ch_10_traits::{Summary, Tweet};
+use ch_10a_traits::{Summary, Tweet};
 
 fn main(){
     let tweet = Tweet{

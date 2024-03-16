@@ -67,7 +67,7 @@ name = "ch_10_generics"
 version = "0.1.0"
 
 [[package]]
-name = "ch_10_traits"
+name = "ch_10a_traits"
 version = "0.1.0"
 
 [[package]]
