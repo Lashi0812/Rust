@@ -30,7 +30,25 @@ fn matching_different_errors_using_closure() {
     });
 }
 
+fn matching_different_errors_using_unwarp() {
+    /*
+        calling the unwarp on Result ,
+            if its Ok then then return the file
+            if its Err then call the panic macro
+    */
+    let file = File::open("using_unwarp").unwrap();
+}
+
+fn matching_different_errors_using_except() {
+    /*
+        it is similar to unwarp but we can specify the error message
+    */
+    let file = File::open("using_except.txt").expect("using_except.txt not found");
+}
+
 fn main() {
     matching_different_errors();
     matching_different_errors_using_closure();
+    matching_different_errors_using_unwarp();
+    matching_different_errors_using_except();
 }
