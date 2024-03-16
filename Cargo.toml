@@ -14,7 +14,8 @@ members = [
     "ch_07a_restaurant",
     "ch_09_error_handling",
     "ch_10_generics",
-    "ch_10a_traits"
+    "ch_10a_traits",
+    "ch_10b_lifetime"
 ]
 
 resolver = "2"

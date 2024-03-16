@@ -1,0 +1,20 @@
+[package]
+name = "ch_10b_lifetime"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "preventing_dangling_reference"
+path = "bin/t_00_preventing_dangling_reference.rs"
+
+[[bin]]
+name = "generic_lifetime_in_function"
+path = "bin/t_01_generic_lifetime_in_function.rs"
+
+[[bin]]
+name = "generic_lifetime_specifier_in_function"
+path = "bin/t_01a_generic_lifetime_specifier_in_function.rs"
+
+[dependencies]
