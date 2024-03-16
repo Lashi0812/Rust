@@ -9,4 +9,12 @@ edition = "2021"
 name = "trait_as_parameter"
 path = "bin/t_00_trait_as_parameter.rs"
 
+[[bin]]
+name = "trait_bound_syntax"
+path = "bin/t_01_trait_bound_syntax.rs"
+
+[[bin]]
+name = "trait_bound_syntax_using_where_clause"
+path = "bin/t_02_trait_bound_syntax_using_where_clause.rs"
+
 [dependencies]
