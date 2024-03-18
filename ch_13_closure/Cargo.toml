@@ -1,0 +1,28 @@
+[package]
+name = "ch_13_closure"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "capturing_env_with_closure"
+path = "bin/t_00_capturing_env_with_closure.rs"
+
+[[bin]]
+name = "cant_have_diff_type_for_single_parameter"
+path = "bin/t_01_cant_have_diff_type_for_single_parameter.rs"
+
+[[bin]]
+name = "t_02_toilet_closure"
+path = "bin/t_02_toilet_closure.rs"
+
+[[bin]]
+name = "t_03_only_borrows"
+path = "bin/t_03_only_borrows.rs"
+
+[[bin]]
+name = "t_04_only_borrows_mutate"
+path = "bin/t_04_only_borrows_mutate.rs"
+
+[dependencies]
