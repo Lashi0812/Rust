@@ -16,7 +16,8 @@ members = [
     "ch_10_generics",
     "ch_10a_traits",
     "ch_10b_lifetime",
-    "ch_13_closure"
+    "ch_13_closure",
+    "ch_13a_iterator"
 ]
 
 resolver = "2"
